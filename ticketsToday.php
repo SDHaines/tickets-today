@@ -1,6 +1,15 @@
 #!/usr/local/bin/php
 <?php
 
+/* 
+ * This script queries the database for information about sales tickets
+ * created today. It runs from cron every 5 minutes with the output piped
+ * to a log file. The standard backup of the sql server database is 
+ * performed once per hour. In the event of a catastrophic failure
+ * we can restore to within an hour and then use this log to recreate
+ * sales that would otherwise be lost with the just the standard backup. 
+ */
+
 require_once '/usr/local/valCommon/Counterpoint.php';
 
 $tsql = "SELECT
