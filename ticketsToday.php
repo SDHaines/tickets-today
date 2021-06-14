@@ -53,7 +53,7 @@ print "TKT_DT,TKT_NO,ITEM_NO,ADDL_DESCR_1,QTY_SOLD,HDR_DISC_CODE,PAY_COD,AMT\n";
 $status = counterpointQuickQuery( $tsql, "printRow" );
 
 function printRow ( $row ){
-    print $row['TKT_DT']->format( "Y-m-d H:m:s" ) . "," .
+    print $row['TKT_DT']->format( 'Y-m-d H:i:s' ) . "," .
     $row['TKT_NO'] . "," . 
     $row['ITEM_NO'] . "," .
     "\"" . $row['ADDL_DESCR_1'] . "\"" . "," .
