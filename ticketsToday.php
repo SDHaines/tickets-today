@@ -47,7 +47,7 @@ INNER JOIN dbo.IM_INV ON dbo.IM_INV.ITEM_NO = dbo.VI_INV_COMMIT_TRX.ITEM_NO
 INNER JOIN dbo.PS_DOC_PMT ON dbo.PS_DOC_PMT.TKT_NO = dbo.VI_PS_DOC_HDR.TKT_NO AND dbo.PS_DOC_PMT.PMT_LIN_TYP = 'T'
 ORDER BY dbo.VI_PS_DOC_HDR.TKT_NO";
 
-print "---------------------------- " . date("Y-m-d H:m:s") . " ----------------------------\n";
+print "---------------------------- " . date("Y-m-d H:i:s") . " ----------------------------\n";
 print "TKT_DT,TKT_NO,ITEM_NO,ADDL_DESCR_1,QTY_SOLD,HDR_DISC_CODE,PAY_COD,AMT\n";
 
 $status = counterpointQuickQuery( $tsql, "printRow" );
